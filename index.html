@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sidebar Toggle</title>
+  <!-- Link to external CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Sidebar container -->
+<div class="sidebar" id="sidebar">
+  <!-- Logo section -->
+  <div class="logo"><span>🏠</span><span class="text"> LOGO</span></div>
+  
+  <!-- Navigation links -->
+  <nav>
+    <a href="#home"><span>🏠</span><span class="text">Home</span></a>
+    <a href="#messages"><span>📩</span><span class="text">Messages</span></a>
+    <a href="#projects"><span>📂</span><span class="text">Projects</span></a>
+    <a href="#settings"><span>⚙️</span><span class="text">Settings</span></a>
+    <a href="#help"><span>❓</span><span class="text">Help</span></a>
+  </nav>
+
+  <!-- Toggle button for collapse/expand -->
+  <button id="toggleBtn" class="desktop-toggle">⏩</button>
+</div>
+
+<!-- Overlay for mobile sidebar when open -->
+<div class="overlay" id="overlay"></div>
+
+<!-- Main content area -->
+<main>
+  <!-- Mobile hamburger button to open sidebar -->
+  <button id="openMobileBtn" class="mobile-btn">☰</button>
+
+  <h1>Main Content</h1>
+  <p>
+    On desktop, click the ⏩ button to collapse/expand the sidebar.<br>
+    On mobile, click ☰ to open it full width.
+  </p>
+</main>
+
+<!-- Link to external JS -->
+<script src="script.js"></script>
+</body>
+</html>

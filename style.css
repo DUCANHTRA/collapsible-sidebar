@@ -1,0 +1,120 @@
+/* Reset and base font */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Sidebar styles */
+  .sidebar {
+    position: fixed; /* Sticks sidebar to left of viewport */
+    top: 0; 
+    left: 0;
+    height: 100vh; /* Full viewport height */
+    background: #222; /* Dark background */
+    color: white;
+    width: 240px; /* Expanded width */
+    display: flex;
+    flex-direction: column; /* Vertical layout */
+    transition: width 0.3s ease, transform 0.3s ease; /* Smooth width & slide animations */
+    z-index: 1000; /* Stay above main content */
+  }
+  
+  /* Logo at top */
+  .logo {
+    padding: 20px;
+    font-weight: bold;
+  }
+  
+  /* Navigation container grows to fill sidebar space */
+  nav {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Each link styles */
+  nav a {
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+  }
+  
+  /* Hover effect on nav links */
+  nav a:hover {
+    background: #444;
+  }
+  
+  /* Desktop toggle button styles */
+  .desktop-toggle {
+    padding: 10px;
+    background: #333;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }Just
+  
+  /* Collapsed sidebar state (desktop) */
+  .sidebar.collapsed {
+    width: 60px; /* Narrow sidebar */
+  }
+  
+  /* Hide text inside nav links when sidebar collapsed */
+  .sidebar.collapsed .text {
+    display: none;
+  }
+  
+  /* Main content styles */
+  main {
+    margin-left: 240px; /* Push main content right to avoid sidebar */
+    padding: 20px;
+    transition: margin-left 0.3s ease; /* Smooth adjustment */
+  }
+  
+  /* When sidebar collapsed, reduce main content margin accordingly */
+  .sidebar.collapsed ~ main {
+    margin-left: 60px;
+  }
+  
+  /* Overlay covers entire screen behind sidebar on mobile */
+  .overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5); /* Semi-transparent black */
+    display: none; /* Hidden by default */
+    z-index: 900; /* Below sidebar */
+  }
+  
+  /* Mobile hamburger open button, hidden on desktop */
+  .mobile-btn {
+    display: none;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 20px;
+  }
+  
+  /* Mobile responsive styles */
+  @media (max-width: 768px) {
+    main {
+      margin-left: 0; /* Remove left margin on small screens */
+    }
+    .sidebar {
+      transform: translateX(-100%); /* Hide sidebar off screen to left */
+      width: 240px; /* Always full width on mobile */
+    }
+    .sidebar.open {
+      transform: translateX(0); /* Slide sidebar in */
+    }
+    /* Show hamburger button */
+    .mobile-btn {
+      display: inline-block;
+    }
+    /* Hide desktop toggle button on mobile */
+    .desktop-toggle {
+      display: none;
+    }
+  }
+  

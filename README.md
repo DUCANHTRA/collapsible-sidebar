@@ -24,7 +24,3 @@ A simple, responsive sidebar navigation component with toggle functionality for 
 ## Browser Support
 
 Works in all modern browsers that support CSS transitions and flexbox.
-
-## License
-
-This project is open source and available under the MIT License.
